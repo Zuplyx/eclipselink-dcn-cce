@@ -1,0 +1,33 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence persistence_2_0.xsd" version="2.0">
+    <persistence-unit name="test-jpa-pu" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>com.zuplyx.jpa.bugtest.domain.MyTestEntity</class>
+        <class>com.zuplyx.jpa.bugtest.domain.Included</class>
+        <class>com.zuplyx.jpa.bugtest.domain.Included2</class>
+        <class>com.zuplyx.jpa.bugtest.domain.Included3</class>
+        <class>com.zuplyx.jpa.bugtest.domain.Included4</class>
+        <class>com.zuplyx.jpa.bugtest.domain.Included5</class>
+        <class>com.zuplyx.jpa.bugtest.domain.Included6</class>
+        <properties>
+            <!-- logging -->
+            <property name="eclipselink.logging.level" value="INFO"/>
+            <property name="eclipselink.logging.level.jpars" value="INFO"/>
+            <property name="eclipselink.logging.parameters" value="true"/>
+            <!-- weaving -->
+            <property name="eclipselink.weaving" value="static"/>
+
+            <!-- enable Database Change notifications -->
+            <property name="eclipselink.cache.database-event-listener" value="DCN"/>
+
+            <!-- unused placeholders -->
+           <property name="jakarta.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+           <property name="jakarta.persistence.jdbc.url" value="jdbc:oracle:thin:@nothing:1921:NOTHING"/>
+           <property name="jakarta.persistence.jdbc.user" value="placeholder"/>
+           <property name="jakarta.persistence.jdbc.password" value="placeholder"/>
+
+            <property name="jakarta.persistence.schema-generation.database.action" value="create-or-extend-tables"/>
+            <property name="jakarta.persistence.sql-load-script-source" value="META-INF/sql/init.sql"/>
+        </properties>
+    </persistence-unit>
+</persistence>
