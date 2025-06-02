@@ -1,6 +1,6 @@
 # ClassCastException in OracleChangeNotificationListener with wrapped Connection
 
-This demonstrates the ClassCastException that occurs in OracleChangeNotificationListener when using Database Change Notification with a wrapped connection.
+This demonstrates the ClassCastException that occurs in OracleChangeNotificationListener when using Database Change Notification with a wrapped connection. See also [eclipselink#2423](https://github.com/eclipse-ee4j/eclipselink/issues/2423).
 
 ## Setup
 
